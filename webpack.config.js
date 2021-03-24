@@ -1,6 +1,7 @@
 const path = require('path');
 const NODE_ENV = process.env.NODE_ENV;
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const IS_DEV = NODE_ENV === 'development';
 
 module.exports = {
     resolve: {
@@ -20,5 +21,11 @@ module :{
 },
 plugins: [
     new HTMLWebpackPlugin({ template: path.resolve(__dirname, 'index.html')})
-]
+],
+devServer: {
+    port: 3000,
+    open: true,
+    hot: ID_DEV,
+
+}
 };
