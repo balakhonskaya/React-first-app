@@ -1,6 +1,6 @@
 const path = require('path');
 const NODE_ENV = process.env.NODE_ENV;
-
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     resolve: {
@@ -17,5 +17,8 @@ module :{
         test: /\.[tj]sx?$/,
         use: ['ts-loader']
     }]
-}
+},
+plugins: [
+    new HTMLWebpackPlugin({ template: path.resolve(__dirname, 'index.html')})
+]
 };
