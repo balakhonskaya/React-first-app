@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const IS_DEV = NODE_ENV === 'development';
 const IS_PROD = NODE_ENV === 'production';
 
-function setupDevtool() {
+function setupDevtools() {
     if (IS_DEV) return 'eval';
     if (IS_PROD) return false;
 }
@@ -31,7 +31,7 @@ plugins: [
 devServer: {
     port: 3000,
     open: true,
-    hot: ID_DEV,
+    hot: IS_DEV
 
 }
 };
