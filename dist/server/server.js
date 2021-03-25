@@ -96,12 +96,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(__webpack_require__(1));
 //const express = require('express');
+var server_1 = __importDefault(__webpack_require__(2));
+var Header_1 = __webpack_require__(3);
 var app = express_1.default();
 app.get('/', function (req, res) {
-    res.send('Hello world!');
+    res.send(server_1.default.renderToString(Header_1.Header()));
 });
 app.listen(3000, function () {
-    console.log('Server starts on http//:localhost:3000');
+    console.log('Server starts on http://localhost:3000');
 });
 
 
@@ -110,6 +112,53 @@ app.listen(3000, function () {
 /***/ (function(module, exports) {
 
 module.exports = require("express");
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom/server");
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Header = void 0;
+var React = __importStar(__webpack_require__(4));
+function Header() {
+    return (React.createElement(Header, null,
+        React.createElement("h1", null, "Hello React!")));
+}
+exports.Header = Header;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("react");
 
 /***/ })
 /******/ ]);
