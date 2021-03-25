@@ -8,5 +8,5 @@ app.get('/', (req, res) =>{
 });
 
 app.listen(3000, () => {
-    console.log('Server starts on https//:localhost:3000');
+    console.log('Server starts on http://localhost:3000');
 });
